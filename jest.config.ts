@@ -1,9 +1,8 @@
 export default {
-  collectCoverage: true,
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
   testMatch: ['**/__tests__/**/*.spec.ts'],
-  collectCoverageFrom: ['**/src/*'],
+  collectCoverageFrom: ['**/__tests__/**/*.spec.ts'],
   transform: {
     '.+\\.ts$': 'ts-jest',
   },
