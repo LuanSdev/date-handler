@@ -6,6 +6,10 @@ export default {
   transform: {
     '.+\\.ts$': 'ts-jest',
   },
+  moduleNameMapper: {
+    'tests/(.*)': '<rootDir>/__tests__/$1',
+    '@/(.*)': '<rooDir>/src/$1',
+  },
   globals: {
     'ts-jest': {
       diagnostics: false,

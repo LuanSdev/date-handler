@@ -4,8 +4,18 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "skipLibCheck": true,
-    "baseUrl": "./src"
-  }
+    "baseUrl": "./src",
+    "rootDir": ".",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      }
+    ]
+  },
+  "include": ["./src/**/*", "./__tests__/**/*"]
 }

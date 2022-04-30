@@ -10,10 +10,16 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
+  },
   plugins: ['@typescript-eslint'],
   rules: {
     'class-methods-use-this': 'off',
     'no-underscore-dangle': 'off',
     'lines-between-class-members': 'off',
+    'import/extensions': 'off',
   },
 };
