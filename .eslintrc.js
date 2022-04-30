@@ -21,5 +21,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'lines-between-class-members': 'off',
     'import/extensions': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'spaced-comment': 'off',
   },
 };
