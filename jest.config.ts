@@ -1,4 +1,9 @@
+import { pathsToModuleNameMapper } from 'ts-jest';
+import { compilerOptions } from './tsconfig.json';
+
 export default {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
   testMatch: ['**/__tests__/**/*.spec.ts'],
@@ -6,10 +11,9 @@ export default {
   transform: {
     '.+\\.ts$': 'ts-jest',
   },
-  moduleNameMapper: {
-    'tests/(.*)': '<rootDir>/__tests__/$1',
-    '@/(.*)': '<rooDir>/src/$1',
-  },
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
+    prefix: '<rootDir>/src/',
+  }),
   globals: {
     'ts-jest': {
       diagnostics: false,
