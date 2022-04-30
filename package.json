@@ -16,6 +16,8 @@
     "typescript": "^4.6.4"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --silent --noStackTrace --maxWorkers=1",
+    "test:unit": "yarn test --silent=false --noStackTrace=false --watch -o",
+    "coverage": "yarn test .. --coverage"
   }
 }
