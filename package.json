@@ -17,7 +17,7 @@
   },
   "scripts": {
     "test": "jest --silent --noStackTrace --maxWorkers=1",
-    "test:unit": "yarn test --silent=false --noStackTrace=false --watch -o",
+    "test:unit": "yarn test .. --silent=false --noStackTrace=false --watch -o",
     "coverage": "yarn test .. --coverage"
   }
 }
