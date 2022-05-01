@@ -23,5 +23,6 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'spaced-comment': 'off',
+    'import/prefer-default-export': 'off',
   },
 };
