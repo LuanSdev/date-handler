@@ -1,5 +1,6 @@
 import { HOUR_IN_MS } from '@/constants/time-units';
 import DateHandler from '@/lib/date-handler';
+import { resources } from '@/lib/date-handler/resources';
 
 describe('Date handler', () => {
   it('should thows if an invalid date is provided.', () => {
@@ -30,5 +31,14 @@ describe('Date handler', () => {
     const diffInHour = diff / HOUR_IN_MS;
 
     expect(diffInHour).toBe(3);
+  });
+
+  it('Should have all methods.', () => {
+    const sut = new DateHandler();
+    const methods = Object.keys(resources);
+
+    methods.forEach((method) => {
+      expect(sut[method]).toBeTruthy();
+    });
   });
 });
