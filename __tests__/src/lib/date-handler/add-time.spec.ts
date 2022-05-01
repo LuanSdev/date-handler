@@ -22,8 +22,14 @@ function addTime(date: Date, config: TAddTimeConfig) {
     throw new Error('Missing time unit.');
   }
 
+  const { timeUnit, qtd } = config;
+
+  if (!TIME_UNITS[timeUnit]) {
+    throw new Error('Invalid time unit.');
+  }
+
   const MIN_QTD = 1;
-  const timeToAdd = TIME_UNITS[config.timeUnit] * (config.qtd || MIN_QTD);
+  const timeToAdd = TIME_UNITS[timeUnit] * (qtd || MIN_QTD);
 
   return new Date(date.getTime() + timeToAdd);
 }
@@ -39,6 +45,14 @@ describe('Add time', () => {
     //eslint-disable-next-line
     //@ts-ignore
     expect(() => addTime(new Date())).toThrow(new Error('Missing time unit.'));
+  });
+
+  it('Should throws if provided unit time is invalid.', () => {
+    expect(() =>
+      addTime(new Date(), {
+        timeUnit: 'invalid-time-unit',
+      }),
+    ).toThrow(new Error('Invalid time unit.'));
   });
 
   it('Should add correct time to provided date.', () => {
