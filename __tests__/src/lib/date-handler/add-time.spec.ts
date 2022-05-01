@@ -74,4 +74,13 @@ describe('Add time', () => {
       expect(diff).toBe(option.expect);
     });
   });
+
+  it('Should add 1 of provided time unit if no qtd is provided.', () => {
+    const date = new Date();
+    const updatedDate = addTime(date, { timeUnit: 'day' });
+
+    const diff = updatedDate.getTime() - date.getTime();
+
+    expect(diff).toBe(DAY_IN_MS);
+  });
 });
