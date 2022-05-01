@@ -1,10 +1,5 @@
 import { DAY_IN_MS, HOUR_IN_MS, MINUTE_IN_MS } from '@/constants/time-units';
-
-export type TTimeUnits = 'minute' | 'hour' | 'day' | 'week';
-export type TAddTimeConfig = {
-  timeUnit: TTimeUnits;
-  qtd?: number;
-};
+import { TAddTimeConfig } from '@/@types';
 
 const TIME_UNITS = {
   minute: MINUTE_IN_MS,

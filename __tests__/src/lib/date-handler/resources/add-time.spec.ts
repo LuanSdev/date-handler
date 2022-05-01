@@ -1,5 +1,6 @@
 import { DAY_IN_MS, HOUR_IN_MS, MINUTE_IN_MS } from '@/constants/time-units';
-import { addTime, TTimeUnits } from '@/lib/date-handler/resources';
+import { TTimeUnits } from '@/@types';
+import { addTime } from '@/lib/date-handler/resources';
 
 describe('Add time', () => {
   it('should throws if no data is provided.', () => {
