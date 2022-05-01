@@ -38,21 +38,25 @@ describe('Add time', () => {
   it('should throws if no data is provided.', () => {
     //eslint-disable-next-line
     //@ts-ignore
-    expect(() => addTime()).toThrow(new Error('Missing date.'));
+    const sut = () => addTime();
+
+    expect(sut).toThrow(new Error('Missing date.'));
   });
 
   it('Should throws if no unit is provided.', () => {
     //eslint-disable-next-line
     //@ts-ignore
-    expect(() => addTime(new Date())).toThrow(new Error('Missing time unit.'));
+    const sut = () => addTime(new Date());
+
+    expect(sut).toThrow(new Error('Missing time unit.'));
   });
 
   it('Should throws if provided unit time is invalid.', () => {
-    expect(() =>
-      addTime(new Date(), {
-        timeUnit: 'invalid-time-unit',
-      }),
-    ).toThrow(new Error('Invalid time unit.'));
+    //eslint-disable-next-line
+    //@ts-ignore
+    const sut = () => addTime(new Date(), { timeUnit: 'invalid-time-unit' });
+
+    expect(sut).toThrow(new Error('Invalid time unit.'));
   });
 
   it('Should add correct time to provided date.', () => {
